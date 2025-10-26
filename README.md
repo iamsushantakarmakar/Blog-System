@@ -369,7 +369,7 @@ text
 ---
 
 ## 📁 Project Structure
-
+```bash
 laravel-blog-system/
 ├── app/
 │ ├── Http/
@@ -423,7 +423,7 @@ laravel-blog-system/
 ├── composer.json
 ├── package.json
 └── README.md
-
+```
 text
 
 ---
