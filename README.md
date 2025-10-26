@@ -91,22 +91,19 @@ A comprehensive blog application built with Laravel 11, featuring user authentic
 
 ### **Step 1: Clone the Repository**
 ```bash
-git clone [https://github.com/iamsushantakarmakar/Blog-System.git](https://github.com/iamsushantakarmakar/Blog-System.git)
+git clone https://github.com/iamsushantakarmakar/Blog-System.git
 cd Blog-System
 ```
-text
 
 ### **Step 2: Install PHP Dependencies**
 ```bash
 composer install
 ```
-text
 
 ### **Step 3: Install JavaScript Dependencies**
 ```bash
 npm install
 ```
-text
 
 ### **Step 4: Environment Configuration**
 
@@ -114,13 +111,11 @@ Copy the `.env.example` file to `.env`:
 ```bash
 cp .env.example .env
 ```
-text
 
 Generate application key:
 ```bash
 php artisan key:generate
 ```
-text
 
 ---
 
@@ -137,7 +132,6 @@ DB_DATABASE=blog_system
 DB_USERNAME=root
 DB_PASSWORD=your_password
 ```
-text
 
 ### **Social Authentication (Optional)**
 
@@ -155,64 +149,39 @@ FACEBOOK_CLIENT_ID=your_facebook_app_id
 FACEBOOK_CLIENT_SECRET=your_facebook_app_secret
 FACEBOOK_REDIRECT_URI=http://localhost:8000/auth/facebook/callback
 ```
-text
 
 **Getting OAuth Credentials:**
 
 - **Google**: [Google Cloud Console](https://console.cloud.google.com/)
 - **Facebook**: [Facebook Developers](https://developers.facebook.com/)
 
-
 ---
 
 ## 🗄️ Database Setup
 
 ### **Step 1: Create Database**
-
+```bash
 mysql -u root -p
-
-text
-undefined
 CREATE DATABASE blog_system;
 EXIT;
-
-text
+```
 
 ### **Step 2: Run Migrations**
-
+```bash
 php artisan migrate
+```
 
-text
-
-### **Step 3: Seed Database (Optional)**
+### **Step 3: Seed Database**
 
 Populate with sample data:
-
+```bash
 php artisan db:seed
-
-text
+```
 
 This creates:
 - 1 Admin user (`admin@example.com` / `password`)
 - 10 Regular users
 - 30 Posts with comments
-
-### **Step 4: Create Admin User Manually**
-
-If not using seeders:
-
-php artisan tinker
-
-text
-undefined
-User::create([
-'name' => 'Admin User',
-'email' => 'admin@example.com',
-'password' => bcrypt('password'),
-'role' => 'admin'
-]);
-
-text
 
 ---
 
@@ -221,54 +190,54 @@ text
 ### **Development Server**
 
 Start Laravel development server
+```bash
 php artisan serve
+```
 
-text
-undefined
 In a separate terminal, compile assets
+```bash
 npm run dev
-
-text
+```
 
 Access the application at: [**http://localhost:8000**](http://localhost:8000)
 
 ### **Production Build**
 
 Build optimized assets
+```bash
 npm run build
-
+```
 Optimize Laravel
+```bash
 php artisan config:cache
 php artisan route:cache
 php artisan view:cache
-
-text
+```
 
 ---
 
 ## 🧪 Testing
 
 ### **Run All Tests**
-
+```bash
 php artisan test
-
-text
+```
 
 ### **Run Specific Test Suite**
 
 Feature tests
+```bash
 php artisan test --testsuite=Feature
-
+```
 Unit tests
+```bash
 php artisan test --testsuite=Unit
-
-text
+```
 
 ### **Run with Coverage**
-
+```bash
 php artisan test --coverage
-
-text
+```
 
 ### **Test Categories**
 
@@ -285,13 +254,13 @@ text
 ### **Base URL**
 http://localhost:8000/api
 
-text
 
 ### **Authentication**
 
 All API requests require authentication using Laravel Sanctum tokens.
 
 **Get Token:**
+```bash
 POST /api/login
 Content-Type: application/json
 
@@ -299,13 +268,12 @@ Content-Type: application/json
 "email": "user@example.com",
 "password": "password"
 }
-
-text
+```
 
 **Use Token:**
+```bash
 Authorization: Bearer {your-token}
-
-text
+```
 
 ### **Endpoints**
 
@@ -333,9 +301,9 @@ curl -X GET http://localhost:8000/api/posts
 -H "Authorization: Bearer your-token-here"
 -H "Accept: application/json"
 
-text
 
 **Response:**
+```bash
 {
 "data": [
 {
@@ -351,8 +319,7 @@ text
 }
 ]
 }
-
-text
+```
 
 ---
 
@@ -412,7 +379,6 @@ laravel-blog-system/
 ├── package.json
 └── README.md
 ```
-text
 
 ---
 
@@ -458,58 +424,7 @@ After running seeders:
 | Role | Email | Password |
 |------|-------|----------|
 | Admin | admin@example.com | password |
-| User | (10 generated users) | password |
-
----
-
-## 🌐 Deployment
-
-### **Deployment Checklist**
-
-- [ ] Set `APP_ENV=production` in `.env`
-- [ ] Set `APP_DEBUG=false` in `.env`
-- [ ] Configure production database
-- [ ] Set up proper `.env` file
-- [ ] Run `php artisan migrate --force`
-- [ ] Run `php artisan config:cache`
-- [ ] Run `php artisan route:cache`
-- [ ] Run `php artisan view:cache`
-- [ ] Set up SSL certificate
-- [ ] Configure web server (Apache/Nginx)
-- [ ] Set proper file permissions
-
-### **Server Requirements**
-
-Set storage permissions
-chmod -R 775 storage bootstrap/cache
-chown -R www-data:www-data storage bootstrap/cache
-
-text
-
-### **Recommended Hosting Providers**
-
-- **VPS**: DigitalOcean, Linode, AWS EC2
-- **Shared**: Laravel Forge, Cloudways
-- **Platform**: Heroku, Railway, Render
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-### **Code Standards**
-
-- Follow PSR-12 coding standards
-- Write unit tests for new features
-- Update documentation as needed
-- Use meaningful commit messages
+| User | (user email id or social login) | password |
 
 ---
 
@@ -524,16 +439,16 @@ This project is open-sourced software licensed under the [MIT license](https://o
 ### **Common Issues**
 
 **Issue: RouteNotFoundException**
+```bash
 php artisan route:clear
 php artisan config:clear
 php artisan cache:clear
-
-text
+```
 
 **Issue: Storage permission denied**
+```bash
 chmod -R 775 storage bootstrap/cache
-
-text
+```
 
 **Issue: Social login not working**
 - Verify OAuth credentials in `.env`
@@ -546,33 +461,3 @@ text
 - Ensure database exists
 
 ---
-
-## 📞 Support
-
-For issues and questions:
-
-- **GitHub Issues**: [Create an issue](https://github.com/yourusername/laravel-blog-system/issues)
-- **Email**: support@example.com
-- **Documentation**: [Wiki](https://github.com/yourusername/laravel-blog-system/wiki)
-
----
-
-## 🙏 Acknowledgments
-
-- [Laravel Framework](https://laravel.com/)
-- [Laravel Breeze](https://laravel.com/docs/11.x/starter-kits#breeze)
-- [Laravel Socialite](https://laravel.com/docs/11.x/socialite)
-- [Tailwind CSS](https://tailwindcss.com/)
-
----
-
-## 📊 Project Statistics
-
-- **Total Files**: 100+
-- **Lines of Code**: 5,000+
-- **Test Coverage**: 80%+
-- **Dependencies**: 25+ packages
-
----
-
-**Built with ❤️ using Laravel**
