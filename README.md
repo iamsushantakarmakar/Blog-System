@@ -90,36 +90,36 @@ A comprehensive blog application built with Laravel 11, featuring user authentic
 ## 📦 Installation
 
 ### **Step 1: Clone the Repository**
-
-git clone https://github.com/yourusername/laravel-blog-system.git
-cd laravel-blog-system
-
+```bash
+git clone [https://github.com/iamsushantakarmakar/Blog-System.git](https://github.com/iamsushantakarmakar/Blog-System.git)
+cd Blog-System
+```
 text
 
 ### **Step 2: Install PHP Dependencies**
-
+```bash
 composer install
-
+```
 text
 
 ### **Step 3: Install JavaScript Dependencies**
-
+```bash
 npm install
-
+```
 text
 
 ### **Step 4: Environment Configuration**
 
 Copy the `.env.example` file to `.env`:
-
+```bash
 cp .env.example .env
-
+```
 text
 
 Generate application key:
-
+```bash
 php artisan key:generate
-
+```
 text
 
 ---
@@ -129,14 +129,14 @@ text
 ### **Database Configuration**
 
 Edit your `.env` file with your database credentials:
-
+```bash
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=blog_system
 DB_USERNAME=root
 DB_PASSWORD=your_password
-
+```
 text
 
 ### **Social Authentication (Optional)**
@@ -144,15 +144,17 @@ text
 Configure Google and Facebook OAuth credentials in `.env`:
 
 Google OAuth
+```bash
 GOOGLE_CLIENT_ID=your_google_client_id
 GOOGLE_CLIENT_SECRET=your_google_client_secret
 GOOGLE_REDIRECT_URI=http://localhost:8000/auth/google/callback
-
+```
 Facebook OAuth
+```bash
 FACEBOOK_CLIENT_ID=your_facebook_app_id
 FACEBOOK_CLIENT_SECRET=your_facebook_app_secret
 FACEBOOK_REDIRECT_URI=http://localhost:8000/auth/facebook/callback
-
+```
 text
 
 **Getting OAuth Credentials:**
@@ -160,20 +162,6 @@ text
 - **Google**: [Google Cloud Console](https://console.cloud.google.com/)
 - **Facebook**: [Facebook Developers](https://developers.facebook.com/)
 
-### **Mail Configuration (Optional)**
-
-For password reset functionality:
-
-MAIL_MAILER=smtp
-MAIL_HOST=smtp.mailtrap.io
-MAIL_PORT=2525
-MAIL_USERNAME=your_username
-MAIL_PASSWORD=your_password
-MAIL_ENCRYPTION=tls
-MAIL_FROM_ADDRESS=noreply@blog-system.com
-MAIL_FROM_NAME="${APP_NAME}"
-
-text
 
 ---
 
