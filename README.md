@@ -19,9 +19,8 @@ A comprehensive blog application built with Laravel 11, featuring user authentic
 - [API Documentation](#api-documentation)
 - [Project Structure](#project-structure)
 - [Usage Guide](#usage-guide)
-- [Deployment](#deployment)
-- [Contributing](#contributing)
 - [License](#license)
+- [Troubleshooting](#troubleshooting)
 
 ---
 
